@@ -1,8 +1,8 @@
 import cards from './menu.json';
-import itmesTemplate from './templates/food-cards.hbs'
+import itemesTemplate from './templates/food-cards.hbs'
 
 const menuRef = document.querySelector('.js-menu')
-const markUp = itmesTemplate(cards)
+const markUp = itemesTemplate(cards)
 
 menuRef.insertAdjacentHTML('beforeend', markUp)
 
@@ -13,16 +13,21 @@ const Theme = {
 };
 
 const themeController = document.querySelector('.theme-switch__toggle')
-const body=document.querySelector('body')
+const body = document.querySelector('body')
+
 themeController.addEventListener('change', changeTheme)
-function changeTheme(e) {
-  if (e.currentTarget.checked) {
-    body.classList.add(Theme.DARK)
-    body.classList.remove(Theme.LIGHT)
+
+body.classList.add(localStorage.getItem('theme'))
+function changeTheme(e){
+  if (e.target.checked) {
+    localStorage.setItem('theme', Theme.DARK)
+    body.classList.replace(Theme.LIGHT, Theme.DARK)
+    return
   }
-  else {
-    body.classList.remove(Theme.DARK)
-    body.classList.add(Theme.LIGHT)
-  }
-  
+  localStorage.setItem('theme', Theme.LIGHT)
+  body.classList.replace(Theme.DARK, Theme.LIGHT)
+   
 }
+  localStorage.getItem('theme') === Theme.DARK
+    ? themeController.checked=true
+    : themeController.checked=false
