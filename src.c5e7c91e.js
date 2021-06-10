@@ -9,4 +9,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"handlebars/dist/handlebars.runtime":"pAws"}],"Focm":[function(require,module,exports) {
 "use strict";var e=c(require("./menu.json")),t=c(require("./templates/food-cards.hbs"));function c(e){return e&&e.__esModule?e:{default:e}}const r=document.querySelector(".js-menu"),o=(0,t.default)(e.default);r.insertAdjacentHTML("beforeend",o);const a={LIGHT:"light-theme",DARK:"dark-theme"},s=document.querySelector(".theme-switch__toggle"),l=document.querySelector("body");function d(e){if(e.target.checked)return localStorage.setItem("theme",a.DARK),void l.classList.replace(a.LIGHT,a.DARK);localStorage.setItem("theme",a.LIGHT),l.classList.replace(a.DARK,a.LIGHT)}s.addEventListener("change",d),l.classList.add(localStorage.getItem("theme")),localStorage.getItem("theme")===a.DARK?s.checked=!0:s.checked=!1;
 },{"./menu.json":"mA8c","./templates/food-cards.hbs":"bJ6X"}]},{},["Focm"], null)
-//# sourceMappingURL=/parcel-project-template/src.c5e7c91e.js.map
+//# sourceMappingURL=/goit-js-hw-10-food-service/src.c5e7c91e.js.map
