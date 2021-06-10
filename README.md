@@ -1,4 +1,4 @@
-# parcel-project-template
+# https://mikhailkolomoitsev.github.io/goit-js-hw-10-food-service/
 
 ## Зависимости
 
